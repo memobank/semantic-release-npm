@@ -89,10 +89,6 @@ async function publish(pluginConfig, context) {
     throw new AggregateError(errors);
   }
 
-  if (!prepared) {
-    await prepareNpm(npmrc, pluginConfig, context);
-  }
-
   return publishNpm(npmrc, pluginConfig, pkg, context);
 }
 
